@@ -5,7 +5,7 @@ void decrypt(void);
 #define error printf("\nInvalid Input, Sorry.\n"); //macro template for std error message
 int main()
 {	
-	printf("\n| C5 v1.0 |\n");
+	printf("\n| C5 v1.1 |\n");
 
 	while(1)
 	{
@@ -42,7 +42,7 @@ int pin()
 	{
 		int d = ((num - (num % i)) / i);
 		sum += d;
-		num = (num - ( d * i ));
+		num = (num - ( d * i )); 
 	}
 	return (sum - (sum/6));
 } 
@@ -65,9 +65,9 @@ void encrypt()
     printf("\nEncrypted message -\n\n");
 	for(i=0;i <= count; i++)
 	{
-		printf("%d ", en[i]);
+		printf("%x ", en[i]);
 	}
-	printf("-111");
+	printf("-6f");
 }
 void decrypt()
 {
@@ -79,7 +79,7 @@ void decrypt()
 	getchar();
 	for(i=0; i <= 3001;i++)
 	{
-		scanf("%d",&d);
+		scanf("%x",&d);
 
 		if(d==-111){
 			msg[i] = '\0';
