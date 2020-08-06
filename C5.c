@@ -63,7 +63,7 @@ void encrypt()
 		count++;
     }
     printf("\nEncrypted message -\n\n");
-	for(i=0;i <= count; i++)
+	for(i=0;i < count; i++)
 	{
 		printf("%x ", en[i]);
 	}
@@ -77,7 +77,7 @@ void decrypt()
     key = pin();
 	printf("\nEnter encrypted message -\n\n");
 	getchar();
-	for(i=0; i <= 3001;i++)
+	for(i=0; i < 3001;i++)
 	{
 		scanf("%x",&d);
 
