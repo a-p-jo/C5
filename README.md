@@ -2,7 +2,7 @@
 C5 is short for Counter Conventional Caesar Cipher Contraption
 
 C5 cipher involves max 8 different shifts applied mostly unevenly across the message, resulting in ciphertext that is not easy to crack.
-It is not necessary that all 8 shifts are used, nor that 8 shifts have unique values, nor even that all 8 shifts have >0 values.
+It is not necessary that all 8 shifts are used, nor that 8 shifts have unique values, nor even that all 8 shifts have non-zero values.
 Hence, a number can be ecnrypted as itself without any anamolous compromise, and the ciphertext can be very random looking in most cases.
 
 **Algorithm/Steps:**
