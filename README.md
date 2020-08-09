@@ -3,7 +3,7 @@ C5 is short for Counter Conventional Caesar Cipher Contraption
 
 **Full Disclosure :** 
 
-C5 is **not** intended for any commercial or serious security purposes. It is loosely based on the Vigenère Cipher and the Caesar Cipher, and remains, a shift cipher at its core. It's intended for making puzzle-ciphers and for the purposes of throwing off casual snooping. A challenge to break C5 is posted [here](https://puzzling.stackexchange.com/questions/100920/can-you-crack-this-multiple-shift-cipher) , and while not yet cracked, it is obly a matter of time. It is not immune to being treated as multiple caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough. 
+C5 is **not** intended for any commercial or serious security purposes. It is loosely based on the Vigenère Cipher and the Caesar Cipher, and remains, a shift cipher at its core. It's intended for making puzzle-ciphers and for the purposes of throwing off casual snooping. A challenge to break C5 is posted [here](https://puzzling.stackexchange.com/questions/100920/can-you-crack-this-multiple-shift-cipher) , and while not yet cracked, it is only a matter of time. It is not immune to being treated as multiple caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough. 
 
 **Algorithm/Steps:**
 
