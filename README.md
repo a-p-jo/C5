@@ -15,15 +15,15 @@ Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie b
 - Encryption :
 
 1. Pin is taken. Pin has 8 digits. These digits are stored individually in an array.These digits are used as the 8 possible shifts.
-2. A Message is taken from the user, stored into a char array msg[]
-4. Each character in msg[] is changed depending on its position value. The position number is matched with 6 mathematical number series. Depending on which it matches with, a digit from the pin is used as a shift on that char. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int.(ASCII value of char x is used for the shift operations)
-5. Each int is stored in an int array en[]. Then, all these ints are printed in hex , with a space separating these , and the last number is always -de  (hex for -222)
+2. A Message is taken from the user, stored into a string 'msg'.
+4. Each character in msg is changed depending on its position value. The position number is matched with 6 mathematical number series. Depending on which it matches with, a digit from the pin is used as a shift on the char in that position. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int.(ASCII value of char x is used for the shift operations)
+5. Each int is stored in an int array 'en'. Then, all elements of en are printed in hex , with a space separating each from the other , and the last number is always -de  (hex for -222, used to terminate input in decryption).
 - Decryption :
 
 1. Pin is taken and digits are stored to array. 
 2. Ciphertext is taken from user.
-3. Every entered int d is stored as int d and the same rules as in encrypt are applied and reversed according to the entered pin and stored to char array msg[].
-4. Char array msg[] is printed, and if pin was correct, it makes sense and is the same as the original message. 
+3. Every entered int is stored and the same rules as in encrypt are applied and reversed according to the entered pin and stored to string 'msg_d'.
+4. String 'msg_d' is printed, and if pin was correct, the decoded text makes sense and is the same as the original message. 
 
 - **Example :**
 
