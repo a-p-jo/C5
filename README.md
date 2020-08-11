@@ -17,7 +17,7 @@ Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie b
 
 1. Password is taken. Password has 8 characters. These  are stored as their ASCII values(except 0, which is stored with the value 0) individually in an array.These values are used as the 8 possible shifts.
 2. A Message is taken from the user, stored into a string 'msg'.
-4. Each character in msg is changed depending on its position value. The position number is matched with 6 mathematical number series. Depending on which it matches with, a digit from the pin is used as a shift on the char in that position. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int.(ASCII value of char x is used for the shift operations)
+4. Each character in msg is changed depending on its position value. The position number is matched with 6 mathematical number series. Depending on which it matches with, a value from the password is used as a shift on the char in that position. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int.(ASCII value of char x is used for the shift operations)
 5. Each int is stored in an int array 'en'. Then, all elements of en are printed in , with a space separating each from the other , and the last number is always -999  (used to terminate input in decryption).
 - Decryption :
 
