@@ -1,12 +1,16 @@
 This folder, as an archive, will contain files of versions from v2 onwards. 
 
 This is done in the case that any ciphertext encoded with previous versions needs 
-to be decoded -- which would otherwise not be possible as nearly every new version has MAJOR changes in the algorithm and the encoding/decoding process. Hence there is NO backward compatibility AT ALL. 
+to be decoded -- which would otherwise not be possible as nearly every new version has MAJOR changes in the algorithm 
+and the encoding/decoding process. Hence there is NO backward compatibility AT ALL. 
 
-Ideally, most changes to the algorithm that break backwards compatibility are made for the reason that they enhance security as compared to the last version. Hence, it would be a futile exercise to ensure backwards compatibility with older, incredibly insecure versions.
+Ideally, most changes to the algorithm that break backwards compatibility are made for the reason that they enhance security as
+compared to the last version. Hence, it would be a futile exercise to ensure backwards compatibility with older, incredibly insecure versions.
 
 In abject necessity of an older version, this file is here to serve you.
 
-Do keep in mind that C5 is, at core, a shift cipher, which means that even as-is, it is only secure enough to discourage casual snooping and making puzzle ciphers -- not SERIOUS security. So, ideally, any older version should be thrown away and buried deep, since it is an extra-insecure version of an already insecure algorithm ! 
+Do keep in mind that C5 is, at core, a shift cipher, which means that even as-is, it is only secure enough to discourage casual 
+snooping and making puzzle ciphers -- not SERIOUS security. So, ideally, any older version should be thrown away and buried deep, since it 
+is an extra-insecure version of an already insecure algorithm ! 
 
 Hope you find whatever you came looking for in this archival folder.
