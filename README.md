@@ -38,7 +38,7 @@ Ciphertext =  12 117 118 -999
 
 **Misc.**
 
--Windows C5 **=>** Compiled with VS2019 | x86_64 & x86 only | requires ' _ ' prefix before getw & putw |
--MacOS C5 **=>** Compiled with Apple Clang 11 | x86_64 only | Compiled with : " make C5 " |
--Linux C5 **=>** Compiled with Ubuntu GCC 9.3.0 | x86_64 only | Compiled with : " make C5 " & " gcc -static -o C5_static C5.c " |
+- Windows C5 **=>** Compiled with VS2019 | x86_64 & x86 only | requires ' _ ' prefix before getw & putw |
+- MacOS C5 **=>** Compiled with Apple Clang 11 | x86_64 only | Compiled with : " make C5 " |
+- Linux C5 **=>** Compiled with Ubuntu GCC 9.3.0 | x86_64 only | Compiled with : " make C5 " & " gcc -static -o C5_static C5.c " |
 
