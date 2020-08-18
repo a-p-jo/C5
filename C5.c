@@ -14,6 +14,7 @@ int pent(int);// Pentagonal nos.
 int hex(int);// Hexagonal numbers.
 int prm(int);//Prime numbers.
 // Refer https://edublognss.wordpress.com/2013/04/16/famous-mathematical-sequences-and-series/ for info on  these number series.
+// use '_getw()' and '_putw()' with Visual Studio
 
 #define error printf("\nInvalid Input, Sorry.\n"); //macro template for std error message
 
