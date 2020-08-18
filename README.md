@@ -1,9 +1,9 @@
-# C5 v2.5
+# C5 v3.0
 C5 is short for Counter Conventional Caesar Cipher Contraption
 
 **Full Disclosure :** 
 
-C5 is **not** intended for any commercial or serious security purposes. It is loosely based on the Vigenère  and  Caesar Ciphers, and remains, a shift cipher at its core. It's intended for making puzzle-ciphers and for the purposes of throwing off casual snooping. A challenge to break C5 is posted [here](https://puzzling.stackexchange.com/questions/100920/can-you-crack-this-multiple-shift-cipher) , and while not yet cracked, it is only a matter of time. It is not immune to being treated as multiple caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough. 
+C5 is **not** intended for any critical security purposes. It is loosely based on the Vigenère  and  Caesar ciphers, and remains, a shift cipher at its core. It's intended for puzzle-ciphers and throwing off casual snooping.It is not immune to being treated as multiple Caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough or if the password is easily guessed. 
 
 **Algorithm/Steps:**
 
@@ -13,18 +13,20 @@ It is not necessary that all 8 shifts are used, nor that 8 shifts have unique va
 
 Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie be very random looking in most cases.
 
-- Encryption :
+C5 can, as of v3.0, encode/decode text files upto 100,000 chars as well as smaller messages upto 3000 chars entered through the console.
 
-1. Password is taken. Password has 8 characters. These  are stored as their ASCII values(except 0, which is stored with the value 0) individually in an array.These values are used as the 8 possible shifts.
-2. A Message is taken from the user, stored into a string 'msg'.
-4. Each character in msg is changed depending on its position value. The position number is matched with 6 mathematical number series. Depending on which it matches with, a value from the password is used as a shift on the char in that position. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int.(ASCII value of char x is used for the shift operations)
-5. Each int is stored in an int array 'en'. Then, all elements of en are printed in , with a space separating each from the other , and the last number is always -999  (used to terminate input in decryption).
-- Decryption :
+- Encoding :
 
-1. Pin is taken and digits are stored to array. 
-2. Ciphertext is taken from user.
-3. Every entered int is stored and the same rules as in encrypt are applied and reversed according to the entered password and stored to string 'msg_d'.
-4. String 'msg_d' is printed, and if pin was correct, the decoded text makes sense and is the same as the original message. 
+1. Password is taken. Password has 8 characters. These  are stored as their ASCII values(except 0, which is stored with the value 0) individually.These values are used as the 8 possible shifts.
+2. Plaintext is taken in through cosole or as a (text) file.
+4. Each character in plaintext is changed depending on its position. The position number is matched with 6 mathematical number series. Depending on which it matches with, a value from the password is used as a shift on the char in that position. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int. ASCII value of char is used for the shift operations. 
+5. Each resultant int is printed or saved to a file, and the last number is always -999  (used to terminate input in decryption).
+- Decoding :
+
+1. Password is taken and each char's value is stored just as with the encoding process.
+2. Ciphertext is taken from user through console or as a file.
+3. Same rules as in encrypt are applied and reversed according to the entered password .
+4. Decoded text is printed or saved to a file, and if password was correct, the decoded text makes sense and is the same as the original message. 
 
 - **Example :**
 
