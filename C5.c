@@ -52,7 +52,7 @@ int main()
 }
 
 
-//------Being Functions------
+//------Begin Functions------
 
 int *pin()
 {
@@ -189,7 +189,7 @@ void encrypt()
             else if(hf=='f'||hf=='F'){
                 printf("\nName for File : "); char outf[261];
                 scanf("%260[^\n]",outf);FILE * out;
-                out = fopen(outf,"w");
+                out = fopen(outf,"wb");
                 if(out==NULL)
                     printf("\nError overwriting/creating file \"%s\".",outf);
                 else{
@@ -258,7 +258,7 @@ void decrypt()
         scanf("%260[^\n]",fname);
 
         FILE * enf;
-        enf = fopen(fname,"r");
+        enf = fopen(fname,"rb");
         if (enf==NULL)
             printf("\nCould not open \"%s\".\nFile may not exist, or filename is incorrect/incomplete.",fname);
         else {
