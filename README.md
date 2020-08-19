@@ -4,6 +4,7 @@ C5 is short for Counter Conventional Caesar Cipher Contraption
 **Full Disclosure :** 
 
 C5 is **not** intended for any critical security purposes. It is loosely based on the Vigenère  and  Caesar ciphers, and remains, a shift cipher at its core. It's intended for puzzle-ciphers and throwing off casual snooping.It is not immune to being treated as multiple Caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough or if the password is easily guessed. If *you* break C5, please raise an issue.
+
 **Algorithm/Steps:**
 
 C5 cipher involves maximum 8 different shifts, of possible values 0, 32-47 and 49-126 applied mostly unevenly across the message, resulting in ciphertext that is not easy to casually crack. Thus each character in the ciphertext has 93 possible shifts used on it.
