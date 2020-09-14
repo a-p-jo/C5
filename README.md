@@ -3,7 +3,9 @@ C5 is short for Counter Conventional Caesar Cipher Contraption
 
 **Full Disclosure :** 
 
-C5 is **not** intended for any critical security purposes. It is loosely based on the Vigenère  and  Caesar ciphers, and remains, a shift cipher at its core. It's intended for puzzle-ciphers and throwing off casual snooping.It is not immune to being treated as multiple Caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough or if the password is easily guessed. It is in fact cracked @ https://puzzling.stackexchange.com/questions/100920/can-you-crack-this-multiple-shift-cipher/101467#101467
+C5 is **not** intended for any critical security purposes. It is loosely based on the Vigenère  and  Caesar ciphers, and remains a shift cipher. It's intended for puzzle-ciphers and throwing off casual snooping.It is not immune to being treated as multiple Caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough or if the password is easily guessed. 
+
+It is in fact cracked : https://puzzling.stackexchange.com/a/101467/70806
 
 **Algorithm/Steps:**
 
@@ -11,7 +13,7 @@ C5 cipher involves maximum 8 different shifts, of possible values 0, 32-47 and 4
 
 It is not necessary that all 8 shifts are used, nor that 8 shifts have unique values, nor even that all 8 shifts have non-zero values -- all this depends on the pin and the length of the message.
 
-Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie be very random looking in most cases.
+Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie be random looking.
 
 C5 can, as of v3.0, encode/decode text files upto 100,000 chars as well as smaller messages upto 3000 chars entered through the console.
 
