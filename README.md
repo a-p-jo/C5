@@ -1,46 +1,43 @@
 # C5 v3.1
 C5 is short for Counter Conventional Caesar Cipher Contraption
 
-**Full Disclosure :** 
+**Disclaimer :** 
 
-C5 is **not** intended for any critical security purposes. It is based on the classical Vigenère  and  Caesar ciphers, and remains a shift cipher. It's intended for puzzle-ciphers and throwing off casual snooping.It is not immune to being treated as multiple Caesar ciphers, where it may be broken by frequency analysis, as long as the message is long enough or if the password is easily guessed. 
+- It "works" only on text files; it is at best a puzzle or toy encryption. It is, in fact, trivially crackable : https://puzzling.stackexchange.com/a/101467/70806
 
-It is, in fact, cracked : https://puzzling.stackexchange.com/a/101467/70806
+- C5 is no longer being developed/fixed/improved beyond v3.1 (which itself changed nothing critical , only cleaned up the code). It will likely remian archived. It is not brilliant code, it has much room for imporvement in File I/O , matching, etc.
+
+*You may wish to take a look at my XOTP repo if you need a well optimized, decently secure and simple cipher.*
 
 **Algorithm/Steps:**
 
-C5 cipher involves maximum 8 different shifts, of possible values 0, 32-47 and 49-126 applied mostly unevenly across the message, resulting in ciphertext that is not easy to casually crack. Thus each character in the ciphertext has 93 possible shifts used on it.
+C5 cipher involves maximum 8 different shift bytes, of possible values 0, 32-126 (printable ASCII range) applied mostly unevenly but in a pattern across the message to each of its bytes. Thus there are 94 possible shifts for each byte, one of which may be 0 , i.e, no shift.
 
-It is not necessary that all 8 shifts are used, nor that 8 shifts have unique values, nor even that all 8 shifts have non-zero values -- all this depends on the pin and the length of the message.
+The method uses the position of a byte in the plaintext to determine which shift will be applied and how. Suppose the byte being looked at in a given moment is the 43rd byte in the file. The value of it's position , 43, is matched with the values in the following number series (in order) : Catalan , Fibonacci, Lucas, Pentagonal, Hexagonal , Prime , Even , Odd. 
 
-Hence, a number can be ecnrypted as itself, and the ciphertext can prima facie be random looking.
+It is possible that a value might overlap from these lists, in such a case wherever it matches first is taken into consideration. Here, 43 will match with prime number series. As can be seen in the source code, this means that the 7th byte of the password will be subtracted from it. Depending on which series it matched with, a byte of plaintext is subjected to addition or substraction with a byte from the password to produce the corresponding byte of ciphertext. Using the key and reversing these operations, one can decode the ciphertext similarly. 
 
-C5 can, as of v3.1, encode/decode text files as well as small messages entered through the Terminal.
+It is not necessary that all 8 shifts will used, nor that 8 shifts have unique values, nor even that all 8 shifts have non-zero values -- all this depends on the pin and the length of the plaintext.
 
-- Encoding :
-
-1. Password has 8 characters. These  are stored as their ASCII values (except 0, which is stored with the value 0) individually.These values are used as the 8 possible shifts.
-
-2. Plaintext is taken in through cosole or as a (text) file.
-
-3. Each character in plaintext is shifted depending on its position and the characters of the password. The position is matched with 6 mathematical number series. Correspondingly, a character from the password is used as a shift on the character of the plaintext. If it is a part of none of these series, the position value is checked for being odd or even. The shifted value is stored as an int. ASCII value of plaintext character is operated on by the shift operations. 
-
-4. Each resultant int is printed, and the terminal number of ciphertext is always -999  (used to terminate input in decryption).
-
-- Decoding :
-
-1. Password is taken and each char's value is stored just as with the encoding process.
-
-2. Ciphertext is taken from user through console or as a file.
-
-3. Same rules as in encrypt are applied and reversed according to the entered password .
-
-4. Decoded text is printed or saved to a file, and if password was correct, the decoded text makes sense and is the same as the original message. 
+C5 can, as of v3.1, encode/decode input from stdin. 
 
 - **Example :**
 
 Message = "hello"
 
+Bytes of message = {'h', 'e' , 'l', 'l', 'o'} = {104, 101, 108 ,108, 111}
+
 Password = "12345678"
+
+Bytes of password = {'1', '2', '3', '4', '5', '6', '7', '8'} = {49, 50, 51, 52, 53, 54, 55, 56}
+
+Thus :
+
+1. plain = 104 , position  = 0 , match = fib , shift = -4th byte of pswd (-53) , Result = 104 - 53 = **51**
+2. plain = 101 , position  = 1 , match = ctln , shift = +2nd byte of pswd (+51) , Result = 101 + 51 = **152**
+3. plain = 108 , position  = 2 , match = ctln , shift = +2nd byte of pswd (+51) , Result = 108 + 51 = **159**
+4. plain = 108 , position  = 3 , match = fib , shift = -4th byte of pswd (-53) , Result = 108 - 53 = **55**
+5. plain = 111 , position  = 4 , match = luc , shift = +0th byte of pswd (+49) , Result = 111 + 49 = **160**
+6. Signify end of plaintext , -999
 
 Ciphertext =  51 152 159 55 160 -999
