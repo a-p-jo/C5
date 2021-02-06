@@ -5,7 +5,7 @@ C5 is short for Counter Conventional Caesar Cipher Contraption
 
 - It "works" only on text files; it is at best a puzzle or toy encryption. It is, in fact, trivially crackable : https://puzzling.stackexchange.com/a/101467/70806
 
-- C5 is no longer being developed/fixed/improved beyond v3.1 (which itself changed nothing critical , only cleaned up the code). It will likely remian archived. It is not brilliant code, it has much room for imporvement in File I/O , matching, etc.
+- C5 is no longer being developed/fixed/improved beyond v3.1 (which itself changed nothing critical , only cleaned up the code). It will likely remian archived. It is not the most brilliant code, it has much room for improvement in File I/O , matching, etc.
 
 *You may wish to take a look at my XOTP repo if you need a well optimized, decently secure and simple cipher.*
 
