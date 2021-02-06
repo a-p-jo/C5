@@ -1,4 +1,4 @@
-# C5 v3.0
+# C5 v3.1
 C5 is short for Counter Conventional Caesar Cipher Contraption
 
 **Full Disclosure :** 
